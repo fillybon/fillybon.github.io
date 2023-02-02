@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Website</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="stars.png" id="stars">
+        <img src="moon.png" id="moon">
+        <img src="mountains_behind.png" id="mountains_behind">
+        <h2 id="text">Moon Light</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="mountains_front.png" id="mountains_front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Parallax Scrolling Effect</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Etiam sed ipsum mattis tortor commodo sodales. Proin id iaculis libero. 
+            In arcu turpis, tempor sit amet consectetur et, euismod ut turpis. Suspendisse potenti. 
+            Phasellus in finibus felis. Quisque at cursus ipsum. In ante ex, euismod eu vehicula et, 
+            consectetur sed justo. Vivamus commodo, nunc porta molestie iaculis, 
+            nisi tellus aliquet tellus, eu aliquam urna sem quis libero. 
+            Fusce vehicula nulla quis lorem pharetra blandit. Curabitur ante mauris, ullamcorper nec sagittis vel, 
+            rhoncus ut nisl. Aliquam at fringilla elit. Nam vestibulum, eros at vulputate venenatis, 
+            lectus risus fermentum nibh, a placerat sem dolor ac risus. <br><br>
+            Cras condimentum venenatis est sed convallis. Nullam tempus eleifend malesuada.
+            Duis congue luctus ligula vitae tempor. Donec in turpis placerat, consequat leo ac, 
+            rhoncus ligula. Ut in justo et augue feugiat feugiat. Etiam tincidunt consequat tincidunt. 
+            Proin hendrerit massa orci, vel scelerisque velit pharetra tempor. 
+            Vivamus efficitur dolor est, eu sodales urna feugiat nec. Vivamus maximus justo leo, 
+            non consectetur mi posuere vel. Vivamus sed sem non mauris maximus sodales a at ligula. <br><br>
+            Mauris sed mauris molestie, ornare elit at, finibus metus. Integer lacus ipsum, 
+            tincidunt ut volutpat in, posuere ac elit. Maecenas faucibus erat risus, 
+            sagittis scelerisque orci sagittis at. Proin est lorem, pulvinar non sapien sit amet, aliquet auctor erat.
+             Pellentesque molestie pretium augue. Aliquam at dolor dolor. Ut at urna vitae ligula porta mattis eu nec eros. 
+             Mauris et elit at lorem tempus tristique. Cras sodales, dui quis lobortis rutrum, massa turpis molestie purus, 
+             quis vehicula sem mi et risus. Aliquam erat volutpat. Morbi a erat augue. Morbi semper euismod tellus. 
+             Donec a sem condimentum, sollicitudin ex ac, euismod metus.</p>
+    </div>
+
+    <script>
+        let stars = document.getElementById("stars")
+        let moon = document.getElementById("moon")
+        let mountains_behind = document.getElementById("mountains_behind")
+        let text = document.getElementById("text")
+        let btn = document.getElementById("btn")
+        let mountains_front = document.getElementById("mountains_front")
+        let header = document.querySelector("header");
+
+        window.addEventListener("scroll", function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + "px";
+            moon.style.top = value * 1.05 + "px";
+            mountains_behind.style.top = value * 0.5 + "px";
+            mountains_front.style.top = value * 0 + "px";
+
+            text.style.marginRight = value * 4 + "px";
+            text.style.marginTop = value * 1.5 + "px";
+            btn.style.marginTop = value * 1.5 + "px";
+            header.style.top = value * 0.5 + "px";
+        })
+    </script>
+</body>
+</html>
